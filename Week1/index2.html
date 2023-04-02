@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index2</title>
+</head>
+<body>
+  <!--순서 없는 목록 만드는 <ul>태그-->
+  <!--중첩된 목록 작성하기-->
+  <h3>배우</h3>
+
+  <ul>
+    <li>
+      국내 남자배우
+      <ul>
+        <li>정우성</li> <li>이정재</li> <li>조승우</li>
+      </ul>
+    </li>
+    <li>
+      국내 여자배우
+      <ul>
+        <li>고윤정</li> <li>한소희</li> <li>신세경</li>
+      </ul>
+    </li>
+  </ul>
+
+  <!--순서 있는 목록 만드는 <ol>태그-->
+  <h3>A반 시험 석차</h3>
+
+  <ol>
+    <li>김영희</li>
+    <li>박철수</li>
+    <li>홍길동</li>
+    <li>이하나</li>
+    <li>김길동</li>
+  </ol>
+
+  <!--정의형 목록 만드는 <dl>태그-->
+  <h3>IT 직군</h3>
+
+  <dl>
+    <dt>UI 디자이너</dt>
+    <dd>기능성과 심미성을 고려한 UI 디자인</dd>
+
+    <dt>프론트엔드 개발자</dt>
+    <dd>사용자가 직접 이용하는 프론트 화면 개발</dd>
+  </dl>
+
+  <!--정보 입력받는 <input>태그-->
+  <h4>취미</h4>
+
+  <label>스포츠</label>
+  <input type="checkbox" value="sports">
+
+  <label>요리</label>
+  <input type="checkbox" value="cook"><br />
+
+  <label>첨부 파일</label>
+  <input type="file"><br/>
+
+  <!--드롭다운 메뉴를 보여주는 <select>태그-->
+  <select>
+    <option>HTML</option>
+    <option>CSS</option>
+    <option>JS</option>
+  </select>
+
+  <!--<form>태그-->
+  <form action="/" method="post">
+    <label>아이디</label>
+    <input type="text">
+
+    <label>비밀번호</label>
+    <input type="password">
+
+    <input type="reset">
+    <input type="submit">
+  </form><br/>
+
+  <!--<audio>태그-->
+  <audio src="img/sound1.mp3" controls></audio>
+  <audio src="img/sound1.mp3" controls autoplay loop preload></audio>
+
+  <!--<video>태그-->
+  <video src="img/video1.MOV" controls></video>
+  <video src="img/video1.MOV" poster="img/smile.jpg" controls></video>
+</body>
+</html>
