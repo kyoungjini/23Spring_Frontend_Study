@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+/*전체 선택자*/
+*{
+  /*모든 요소의 테두리를 1px 굵기의 빨간색 실선으로 적용해라*/
+  /*border: 1px solid red;*/
+}
+
+/*태그 선택자*/
+h2{
+  border: 1px solid pink;
+}
+h3{
+  border: 1px solid green;
+}
+h4{
+  border: 1px solid blue;
+}
+
+/*자손 선택자*/
+p strong{
+  border: 1px solid blue;
+}
+
+/*자식 선택자*/
+ul>li{
+  border:1px solid blue;
+}
+
+/*그룹 선택자*/
+h2,h3,h4{
+  border: 1px solid black;
+}

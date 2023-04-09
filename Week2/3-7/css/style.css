@@ -1,0 +1,70 @@
+/*요소의 그림자 만들기*/
+.box1{
+  width: 50px;
+  height: 50px;
+  background: burlywood;
+  margin: 30px;
+  float: left;
+  box-shadow: 10px 10px 30px black;
+}
+.box2{
+  width: 50px;
+  height: 50px;
+  background: yellowgreen;
+  margin: 30px;
+  float: left;
+  box-shadow: -5px -5px 0px palevioletred;
+}
+p{
+  font-weight: bold;
+  font-size: 15px;
+  font-family: "arial";
+  color: #111;
+  margin: 30px;
+  text-shadow: 5px 5px 0px #aaa;
+}
+
+/*모서리 둥글게 만들기*/
+.box1{
+  border-radius: 10px;
+}
+.box2{
+  border-radius: 50%;
+}
+
+/*그레이디언트 적용하기*/
+.box3{
+  width: 50px;
+  height: 50px;
+  float: left;
+  margin: 20px;
+  background: linear-gradient(to bottom, blue, red);
+}
+.box4{
+  width: 50px;
+  height: 50px;
+  float: left;
+  margin: 20px;
+  background: linear-gradient(45deg, green, palevioletred);
+}
+
+/*특수효과 사용하기*/
+.last{
+  width: 150px;
+  margin: 10px auto;
+  border: 1px solid;
+  padding: 10px;
+}
+.last img{
+  width: 100px;
+  margin: 6px;
+}
+.last img:nth-of-type(2){
+  filter: blur(3px);
+}
+.last img:nth-of-type(3){
+  filter: grayscale(150%);
+}
+.last img:nth-of-type(4){
+  filter: sepia(100%);
+}

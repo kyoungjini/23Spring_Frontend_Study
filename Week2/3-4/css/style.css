@@ -1,0 +1,67 @@
+/*너비와 높이 지정하기*/
+article{
+  border: 1px solid red;
+}
+article:nth-of-type(1){
+  width: 100px;
+  height: 100px;
+}
+article:nth-of-type(2){
+  width: 20%;
+  height: 20%;
+}
+article:nth-of-type(3){
+  width: 10vw;
+  height: 10vw;
+}
+article:nth-of-type(4){
+  width: 10vh;
+  height: 10vh;
+}
+
+/*바깥쪽 여백 지정하기*/
+article:nth-of-type(5){
+  margin: 10px auto 20px;
+}
+
+/*안쪽 여백 지정하기*/
+article:nth-of-type(6){
+  padding: 30px;
+}
+
+/*기존 박스 크기 유지하며 안쪽 여백 지정하기*/
+article:nth-of-type(7){
+  margin: 10px;
+  padding: 30px;
+  box-sizing: border-box
+}
+
+/*테두리 형태 지정하기*/
+div{
+  width: 30px;
+  height: 20px;
+  margin: 20px;
+}
+div:nth-of-type(1){
+  border-width: 1px;
+  border-style: solid;
+  border-color: red;
+}
+div:nth-of-type(2){
+  border: 2px dashed green;
+}
+div:nth-of-type(3){
+  border: 3px dotted blue;
+}
+
+/*블록 요소와 인라인 요소 태그*/
+p{
+  font-size: 10px;
+  border: 1px solid red;
+  height: 50px;
+}
+strong,em{
+  border: 1px solid blue;
+  height: 20px;
+  display: inline-block;
+}

@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+/*순서 선택자*/
+ul li:nth-of-type(1){
+  border: 1px solid red;
+}
+ul li:nth-of-type(2){
+  border: 1px solid green;
+}
+ul li:nth-of-type(3){
+  border: 1px solid blue;
+}
+ul li:nth-of-type(4){
+  border: 1px solid violet;
+}
+
+/*수열 선택자*/
+/*+홀수,짝수 선택자 : 괄호 안에 odd나 even 입력*/
+ul li:nth-of-type(3n){
+  border: 1px solid orange;
+}
+
+/*마지막 요소 선택자*/
+ul li:last-child{
+  border: 1px solid burlywood;
+}
+
+/*속성 선택자*/
+input[type="text"]{
+  border: 1px solid blue;
+}
+input[type="password"]{
+  border: 1px solid red;
+}
+
+/*가상 선택자*/
+h1{
+  border: 1px solid blue;
+}
+h1:hover{
+  border: 1px solid red;
+}
+h1:before{
+  content:"before content";
+  color: blue;
+}
+h1:after{
+  content:"after content";
+  color:red;
+}
+
+/*클래스 선택자*/
+p.text1{
+  border: 1px solid blue;
+}
+.text2{
+  border: 1px solid red;
+}
+
+/*아이디 선택자*/
+#header{
+  border: 1px solid red;
+}
+#section{
+  border: 1px solid green;
+}
+#footer{
+  border: 1px solid violet;
+}
