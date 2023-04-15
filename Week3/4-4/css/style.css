@@ -1,0 +1,30 @@
+/*svg 파일을 웹 브라우저에 출력하기*/
+article{
+  width: 100px;
+  border: 1px solid;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 20px auto;
+}
+article svg{
+  width: 100%;
+}
+
+/*svg의 path 스타일 변경하기 + 모션 만들기*/
+article svg path{
+  fill: transparent;
+  stroke: red;
+  stroke-width: 4;
+  stroke-dasharray: 2511;
+  stroke-dashoffset: -2511;
+  transition: all 3s;
+}
+article:hover svg path{
+  stroke-dashoffset: 0;
+}
+
+/*비트맵과 벡터 이미지 확인하기*/
+img{
+  width: 100px;
+  margin: 20px;
+}

@@ -1,0 +1,17 @@
+/*미디어 쿼리를 사용하여 배경색 바꾸기*/
+article{
+  width: 100px;
+  height: 100px;
+  background: pink;
+  margin: 20px auto;
+}
+@media screen and (max-width: 500px){
+  article{
+    background: orange;
+  }
+}
+@media screen and (max-width: 300px){
+  article{
+    background: aquamarine;
+  }
+}

@@ -1,0 +1,30 @@
+/*자식 요소의 순서 지정하기*/
+*{
+  margin: 0px;
+  padding: 0px;
+}
+section{
+  width: 100%;
+  background: lightcoral;
+  display: flex;
+}
+section article{
+  width: 100px;
+  height: 100px;
+  background: antiquewhite;
+  border: 1px solid #000;
+  font-size: 50px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section article:nth-of-type(1){
+  order: 2;
+}
+section article:nth-of-type(2){
+  order: 3;
+}
+section article:nth-of-type(3){
+  order: 1;
+}
