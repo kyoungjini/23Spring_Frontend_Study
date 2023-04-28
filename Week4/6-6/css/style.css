@@ -1,0 +1,52 @@
+/*버튼 비활성화*/
+ul li{
+  color: gray;
+}
+
+/*버튼 활성화*/
+ul li.on{
+  color: black;
+  cursor: pointer;
+}
+section{
+  width: 200px;
+  height: 100px;
+  border: 1px solid #888;
+  margin: 50px;
+  position: relative;
+  perspective: 400px;
+}
+
+/*박스 비활성화*/
+section article{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 30px;
+  opacity: 0;
+  transform: rotateY(-180deg);
+  transition: 0.5s;
+}
+
+/*박스 활성화*/
+section article.on{
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+
+/*박스 순서별로 배경색 지정*/
+section article:nth-of-type(1){
+  background: aqua;
+}
+section article:nth-of-type(2){
+  background: hotpink;
+}
+section article:nth-of-type(3){
+  background: orange;
+}

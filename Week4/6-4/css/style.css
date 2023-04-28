@@ -1,0 +1,19 @@
+a{
+  font-size: 30px;
+  color: #555;
+}
+
+#box{
+  width: 100px;
+  height: 100px;
+  background: aqua;
+  margin: 100px auto;
+}
+
+#square{
+  width: 100px;
+  height: 100px;
+  margin: 50px;
+  background: aqua;
+  transition: 0.5s;
+}
