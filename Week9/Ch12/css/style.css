@@ -1,0 +1,341 @@
+@charset "utf-8";
+
+/* 3단계 */
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+ul, ol, li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	outline: 0;
+}
+
+
+/*STEP1 - 기본 틀과 부가적인 부분 꾸미기*/
+figure{
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	position: relative;
+	background: linear-gradient(25deg, violet, pink);
+}
+figure h1{
+	position: absolute;
+	top: 7vh;
+	left: 4vw;
+	font-size: 0;
+}
+figure h1 strong{
+	color: #fff;
+	font-size: 30px;
+	font-family: "arial";
+	line-height: 1.4;
+	letter-spacing: 1px;
+}
+figure h1 span{
+	color: #fff;
+	font-size: 4px;
+	font-family: "arial";
+	line-height: 1;
+	letter-spacing: 0.8px;
+	opacity: 0.8;
+}
+figure .menu{
+	position: absolute;
+	color: #fff;
+	top: 8vh;
+	right: 4vw;
+	font-size: 24px;
+}
+figure > p{
+	color: #fff;
+	opacity: 0.8;
+	letter-spacing: 2px;
+	font: 5px/1 "arial";
+	position: absolute;
+	bottom: 7vh;
+	left: 50%; /*첫 글자 기준으로 가운데로 옮기기*/
+	transform: translateX(-50%);
+}
+
+
+/*STEP2 - 음악 플레이어 패널 꾸미기*/
+figure section{
+	width: 20vw;
+	height: 65vh;
+	/*border: 1px solid aqua;*/
+	position: absolute;
+	/*위치 조절-내맘대로 설정함!*/
+	top: 115%;
+	left: 50%;
+	margin-left: -10vw;
+	/*transform: translateX(-50%); 내가 작성했던 잘못된 code*/
+	/*좌우 버튼 클릭 시 패널 회전시키기 위한 코드*/
+	transition: 1s;
+}
+figure section article{ /*개별 음악 플레이어 패널*/
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+figure section article .inner{ /*음악 플레이어 패널 콘텐츠 그룹*/
+	background: #f0f7ff;
+	width: 100%;
+	height: 100%;
+	padding: 5vh 2.5vw 8vh;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-content: space-between; /*자식 콘텐츠 안쪽 세로 여백을 균등 배치*/
+	flex-wrap: wrap;
+	border-radius: 10px;
+	box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+	opacity: 0.6; /*투명도 낮춰서 비활성화*/
+	transform: scale(0.8); /*축소시켜서 비활성화*/
+	
+	transition: opacity 1s, transform 1s; /*모션 처리*/
+}
+
+/*활성화한 패널*/
+figure section article.on .inner{
+	opacity: 0.9;
+	transform: scale(1.1);
+}
+
+/*패널들 꾸미기*/
+figure section article .inner .pic{
+	width: 14vw;
+	height: 14vw;
+	margin: 0px auto;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+	background-position: 200%; /*배경 이미지 위치를 조절해서 .pic 요소의 이미지를 숨김*/
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+/*before=아래쪽에 은은하게 깔리는 커버 이미지의 그림자
+after=그 위의 커버 이미지*/
+figure section article .inner .pic::before,
+figure section article .inner .pic::after{
+	content: "";
+	display: block;
+	width: inherit;
+	height: inherit;
+	border-radius: inherit;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background-image: inherit; /*부모 요소 .pic으로부터 이미지 상속*/
+	background-position: center;
+	background-repeat: inherit;
+	background-size: cover;
+	transform-origin: center center;
+}
+figure section article .inner .pic::before{
+	transform: translateY(10%);
+	filter: blur(20px) brightness(1.6); /*이미지를 블러 처리하고 밝게 적용*/
+}
+/*cd 안에 구멍 뚫어주기*/
+figure section article .inner .pic .dot{
+	background: #e4f1ff;
+	width: 3vw;
+	height: 3vw;
+	border-radius: 50%;
+	position: relative;
+	z-index: 3;
+	box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1); /*inset으로 안쪽 그림자 생성*/
+}
+
+
+/*STEP3 - 패널 안에 정보 적기*/
+figure section article .inner .txt{
+	/*position, top 내가 직접 설정함!*/
+	position: absolute;
+	top: 42vh;
+	text-align: center;
+	z-index: 3;
+}
+figure section article .inner .txt h2{
+	font-size: 18px;
+	font-family: "arial";
+	margin-bottom: 2vh;
+	color: #222;
+}
+figure section article .inner .txt p{
+	font-size: 12px;
+	color: #777;
+	margin-bottom: 3vh;
+}
+figure section article .inner .txt ul{
+	font-size: 21px;
+	display: flex;
+	justify-content: space-around;
+}
+figure section article .inner .txt ul li{
+	cursor: pointer;
+	opacity: 0.6;
+	transition: 0.5s;
+}
+figure section article .inner .txt ul li.play{
+	transform: scale(1.5);
+	opacity: 0.9;
+}
+figure section article .inner .txt ul li:hover{
+	/*좌우 버튼은 마우스 호버 시 1.5배 확대*/
+	transform: scale(1.5);
+	opacity: 0.8;
+}
+figure section article .inner .txt ul li.play:hover{
+	/*재생 버튼은 마우스 호버 시 2배 확대*/
+	transform: scale(2);
+	opacity: 1;
+}
+
+
+/*STEP4 - 컨트롤 패널 버튼으로 음악을 재생.정지하기*/
+@keyframes ani{ /*앨범 커버 이미지 회전 키프레임*/
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+@keyframes ani2{ /*앨범 커버 그림자 회전 키프레임*/
+	0%{
+    transform: translateY(10%) rotate(0deg);
+  }
+  100%{
+    transform: translateY(10%) rotate(360deg);
+  }
+}
+figure section article .inner .pic.on::after{
+	animation: ani 4s linear infinite;
+}
+figure section article .inner .pic.on::before{
+	animation: ani2 4s linear infinite;
+}
+
+
+/*STEP5 - 좌우 버튼 클릭 시 패널 회전시키기*/
+/*prev 버튼 만들기*/
+figure .btnPrev{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-20vw, -50%);
+	width: 60px;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	text-align: left;
+	cursor: pointer;
+}
+figure .btnPrev span{
+	font: 11px/1 "arial";
+	color: #fff;
+	opacity: 1;
+	transform: translateX(30%);
+	transition: 0.5s;
+}
+figure .btnPrev::before{ /*이전 버튼 화살표 라인 가상 요소*/
+	content: "";
+	background: #fff;
+	display: block;
+	width: 100%;
+	height: 1px;
+	position: absolute;
+	top: 50%;
+	left: 0px;
+	transform-origin: left center;
+	transform: rotate(-180deg);
+	transition: 0.5s;
+}
+figure .btnPrev::after{ /*이전 버튼 화살표 라인 가상 요소*/
+	content: "";
+	background: #fff;
+	display: block;
+	width: 100%;
+	height: 1px;
+	position: absolute;
+	bottom: 50%;
+	left: 0px;
+	transform-origin: left center;
+	transform: rotate(180deg);
+	transition: 0.5s;
+}
+figure .btnPrev:hover span{
+	opacity: 0;
+	transform: translate(100%);
+}
+figure .btnPrev:hover::before{
+	transform: rotate(-30deg);
+}
+figure .btnPrev:hover::after{
+	transform: rotate(30deg);
+}
+
+/*next 버튼 만들기*/
+figure .btnNext{
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	transform: translate(20vw, -50%);
+	width: 60px;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	text-align: right;
+	cursor: pointer;
+}
+figure .btnNext span{
+	font: 11px/1 "arial";
+	color: #fff;
+	opacity: 1;
+	transform: translateX(-30%);
+	transition: 0.5s;
+}
+figure .btnNext::before{ /*이전 버튼 화살표 라인 가상 요소*/
+	content: "";
+	background: #fff;
+	display: block;
+	width: 100%;
+	height: 1px;
+	position: absolute;
+	top: 50%;
+	left: 0px;
+	transform-origin: right center;
+	transform: rotate(180deg);
+	transition: 0.5s;
+}
+figure .btnNext::after{ /*이전 버튼 화살표 라인 가상 요소*/
+	content: "";
+	background: #fff;
+	display: block;
+	width: 100%;
+	height: 1px;
+	position: absolute;
+	bottom: 50%;
+	left: 0px;
+	transform-origin: right center;
+	transform: rotate(-180deg);
+	transition: 0.5s;
+}
+figure .btnNext:hover span{
+	opacity: 0;
+	transform: translate(-100%);
+}
+figure .btnNext:hover::before{
+	transform: rotate(30deg);
+}
+figure .btnNext:hover::after{
+	transform: rotate(-30deg);
+}
